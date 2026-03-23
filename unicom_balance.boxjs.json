@@ -1,0 +1,76 @@
+{
+  "id": "unicom_balance",
+  "name": "联通余量查询",
+  "desc": "查询中国联通流量、话费余量",
+  "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10010.png",
+  "repo": "https://github.com/your-repo/unicom-balance",
+  "apps": [
+    {
+      "id": "unicom_balance",
+      "name": "联通余量",
+      "keys": [
+        "unicom_token",
+        "unicom_mobile",
+        "unicom_citycode",
+        "unicom_provincecode"
+      ],
+      "settings": [
+        {
+          "id": "unicom_token",
+          "name": "Token",
+          "val": "",
+          "type": "text",
+          "desc": "联通APP的Token，请从Cookie中提取"
+        },
+        {
+          "id": "unicom_mobile",
+          "name": "手机号",
+          "val": "",
+          "type": "text",
+          "desc": "中国联通手机号码"
+        },
+        {
+          "id": "unicom_citycode",
+          "name": "城市代码",
+          "val": "",
+          "type": "text",
+          "desc": "城市代码（如：110）"
+        },
+        {
+          "id": "unicom_provincecode",
+          "name": "省份代码",
+          "val": "",
+          "type": "text",
+          "desc": "省份代码（如：11）"
+        },
+        {
+          "id": "unicom_showfee",
+          "name": "显示话费",
+          "val": true,
+          "type": "boolean",
+          "desc": "是否在通知中显示话费余额"
+        },
+        {
+          "id": "unicom_showflow",
+          "name": "显示流量",
+          "val": true,
+          "type": "boolean",
+          "desc": "是否在通知中显示流量余量"
+        },
+        {
+          "id": "unicom_notify",
+          "name": "通知开关",
+          "val": true,
+          "type": "boolean",
+          "desc": "是否开启通知提醒"
+        }
+      ],
+      "author": "@workbuddy",
+      "repo": "https://github.com/your-repo/unicom-balance",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10010.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10010.png"
+      ]
+    }
+  ]
+}
