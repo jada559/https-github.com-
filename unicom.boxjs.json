@@ -1,0 +1,81 @@
+{
+  "id": "unicom",
+  "name": "联通流量查询",
+  "desc": "查询中国联通流量余量、话费余额，支持 Server酱微信推送。运行于 Shadowrocket / Surge / Loon / Quantumult X。",
+  "icons": ["https://img.icons8.com/color/100/china-unicom.png"],
+  "author": "@WorkBuddy",
+  "homepage": "https://github.com/your-repo/unicom-boxjs",
+  "repo": "https://raw.githubusercontent.com/your-repo/unicom-boxjs/main/unicom.boxjs.json",
+  "keys": [
+    {
+      "id": "unicom_phone",
+      "name": "手机号",
+      "val": "",
+      "placeholder": "请输入联通手机号（11位）",
+      "desc": "中国联通手机号，用于短信登录",
+      "type": "text"
+    },
+    {
+      "id": "unicom_smscode",
+      "name": "短信验证码",
+      "val": "",
+      "placeholder": "收到短信后填入此处",
+      "desc": "先点击「发送验证码」，收到短信后填入此处，再点击「验证登录」",
+      "type": "text"
+    },
+    {
+      "id": "unicom_token",
+      "name": "登录 Token（自动填入）",
+      "val": "",
+      "placeholder": "登录成功后自动保存，无需手动填写",
+      "desc": "登录成功后自动保存，Token 有效期约 30 天，过期后重新执行登录即可",
+      "type": "text"
+    },
+    {
+      "id": "unicom_serverchan",
+      "name": "Server酱 SendKey",
+      "val": "",
+      "placeholder": "SCT开头的Key，留空则不推送",
+      "desc": "Server酱微信推送 Key（https://sct.ftqq.com/），留空则只弹系统通知",
+      "type": "text"
+    },
+    {
+      "id": "unicom_threshold",
+      "name": "流量告警阈值（%）",
+      "val": "20",
+      "placeholder": "20",
+      "desc": "流量剩余百分比低于此值时触发 Server酱推送（默认 20%）",
+      "type": "number"
+    },
+    {
+      "id": "unicom_notify_all",
+      "name": "每次查询都推送",
+      "val": "false",
+      "desc": "开启后每次查询都会推送 Server酱（不管流量是否低于阈值）",
+      "type": "boolean"
+    }
+  ],
+  "apps": [
+    {
+      "id": "unicom_send_sms",
+      "name": "① 发送验证码",
+      "desc": "向填写的手机号发送登录短信验证码",
+      "script": "unicom.js",
+      "arg": "sendSms"
+    },
+    {
+      "id": "unicom_login",
+      "name": "② 验证登录",
+      "desc": "使用短信验证码完成登录，保存 Token",
+      "script": "unicom.js",
+      "arg": "login"
+    },
+    {
+      "id": "unicom_query",
+      "name": "③ 查询流量",
+      "desc": "立即查询流量余量和话费余额，并推送结果",
+      "script": "unicom.js",
+      "arg": "query"
+    }
+  ]
+}
